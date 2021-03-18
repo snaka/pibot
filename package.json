@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/snaka/pibot/issues"
   },
-  "homepage": "https://github.com/snaka/pibot#readme"
+  "homepage": "https://github.com/snaka/pibot#readme",
+  "devDependencies": {
+    "serverless": "^2.30.3",
+    "serverless-offline": "^6.8.0"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.3.0",
+    "@vendia/serverless-express": "^4.3.4"
+  }
 }
