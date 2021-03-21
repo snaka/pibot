@@ -45,10 +45,10 @@ expressReceiver.router.post('/incoming', async (req, res) => {
       threadTs = prev.Body.toString()
       console.log('threadTs:', threadTs);
     } catch (e) {
+      console.log('ERROR:', e);
       if (e.code !== 'NoSuchKey') {
         throw e;
       }
-      console.log('error:', e);
     }
 
     response = await app.client.chat.postMessage({
