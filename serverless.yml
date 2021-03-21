@@ -11,6 +11,20 @@ provider:
   lambdaHashingVersion: 20201221
   apiGateway:
     shouldStartNameWithService: true
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - 's3:GetObject'
+            - 's3:PutObject'
+          Resource:
+            - 'arn:aws:s3:::${self:resources.Resources.Posts.Properties.BucketName}/*'
+        - Effect: Allow
+          Action:
+            - 's3:ListBucket'
+          Resource:
+            - 'arn:aws:s3:::${self:resources.Resources.Posts.Properties.BucketName}'
 plugins:
   - serverless-offline
   - serverless-s3-local
