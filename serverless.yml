@@ -10,6 +10,9 @@ provider:
   lambdaHashingVersion: 20201221
   apiGateway:
     shouldStartNameWithService: true
+plugins:
+  - serverless-offline
+  - serverless-s3-local
 functions:
   slack:
     handler: app.handler
@@ -17,5 +20,3 @@ functions:
       - http:
           path: incoming
           method: post
-plugins:
-  - serverless-offline
