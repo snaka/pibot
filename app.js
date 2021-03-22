@@ -33,7 +33,6 @@ expressReceiver.router.post('/incoming', async (req, res) => {
 
   body.primary_resources.forEach(async (resource) => {
     s3key = `ch-${req.query.channel}/pj-${body.project.id}/${resource.kind}-${resource.id}`
-    console.log('s3key: ', s3key);
 
     threadTs = null;
     try {
@@ -41,9 +40,7 @@ expressReceiver.router.post('/incoming', async (req, res) => {
         Bucket: process.env.BUCKET_NAME,
         Key: s3key,
       }).promise();
-      console.log('prev:', prev);
       threadTs = prev.Body.toString()
-      console.log('threadTs:', threadTs);
     } catch (e) {
       console.log('ERROR:', e);
       if (e.code !== 'NoSuchKey') {
