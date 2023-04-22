@@ -24,6 +24,6 @@
   "dependencies": {
     "@slack/bolt": "^3.3.0",
     "@vendia/serverless-express": "^4.3.4",
-    "aws-sdk": "^2.868.0"
+    "aws-sdk": "^2.1363.0"
   }
 }
